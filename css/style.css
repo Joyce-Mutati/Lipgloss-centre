@@ -1,0 +1,147 @@
+body{
+    background-color: #fff0f6;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: black;
+    line-height: 1.6em;
+    margin: 0;
+}
+
+.container{
+    width: 90%;
+    overflow: hidden;
+    margin: auto;
+}
+.button{
+   background-color: indianred;
+   color: black;
+   padding: 10px 15px;
+}
+.button:hover{
+    background: red;
+    color: white;
+}
+.shop-button{
+    background-color: indianred;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+ }
+ .shop-button:hover{
+    background: red;
+    color: white;
+}
+.sticky-header{
+    position: sticky;
+    top: 0%;
+    z-index: 0;
+}
+#main-header{
+    background-color: #ff69b4;
+    
+
+
+}
+#main-header h1{
+    letter-spacing: 0.7em;
+    word-spacing: 0.8;
+    text-align: center;
+}
+#main-header p{
+    text-align: center;
+    font-size: 25px;
+    text-decoration: wavy;
+    font-style: oblique;
+    font-weight:lighter;
+    letter-spacing:0.2em;
+    
+
+}
+#navbar{
+    background-color: #ffb6c1;
+    color: white;
+    opacity: 120%;
+    padding: 15px 0;
+    position: sticky;   
+    top: 0;             
+    z-index: 1000;
+}
+#navbar ul{
+    list-style: none;
+    padding: 0;
+    font-size: 25px;
+    text-decoration: double;
+    text-align: center;
+}
+#navbar li{
+    display: inline-block;
+    margin: 0 20px;
+   
+    
+   
+}
+#navbar a{
+    color: black;
+    font-size: 18px;
+    padding-right: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#navbar :hover{
+    
+    color: white;
+}
+
+#about p{
+text-align: center;
+font-style: oblique;
+}
+#about h4{
+    text-align: center;
+}
+
+#products{
+    
+    margin: 40px 0;
+    
+}
+#products h2{
+    text-align: center;
+}
+#product-grid{
+text-align: center;
+}
+#product-card{
+    display: inline-block;
+    width: 200px;
+    margin: 10px;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+#product-card img{
+    width:180px;
+    height:180px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+#product-card h3 {
+    margin: 10px 0 5px;
+}
+
+#product-card p {
+    color: #ff69b4;
+    font-weight: bold;
+}
+#main-footer{
+    text-align: center;
+    background-color: darkslategrey;
+    color: white;
+}
