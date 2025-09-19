@@ -266,3 +266,74 @@ padding: 0;
     text-align: center;
   
 }
+.contact-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff6fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-form h2,
+.whatsapp-section h2,
+.social-links h2 {
+  color: #ff4d94;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+
+form button {
+  padding: 10px 20px;
+  background: #ff4d94;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #e60073;
+}
+
+.whatsapp-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #25d366;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.whatsapp-button:hover {
+  background: #1da851;
+}
+
+.social-links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-links a {
+  color: #ff4d94;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+.btn{
+    display: block;
+}
