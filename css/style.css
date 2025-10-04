@@ -340,3 +340,157 @@ form button:hover {
 #header-main {
     text-align: center;
 }
+.buy-btn{
+   background-color: indianred;
+   color: black;
+   padding: 10px 15px;
+}
+.buy-btn:hover{
+    background: red;
+    color: white;
+}
+/* --- Theme Switch Styles --- */
+.theme-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  cursor: pointer;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffb6c1; /* pinkish default */
+  border-radius: 34px;
+  transition: background-color 0.4s;
+}
+
+.slider::before {
+  content: "🌙";
+  position: absolute;
+  left: 6px;
+  top: 3px;
+  width: 28px;
+  height: 28px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease;
+}
+
+/* When dark mode is active */
+input:checked + .switch .slider {
+  background-color: #333;
+}
+
+input:checked + .switch .slider::before {
+  content: "☀️";
+  transform: translateX(26px);
+}
+/* --- Dark Mode Page Styles --- */
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffe4ec; /* soft pinkish white text */
+}
+
+/* Make sure containers and headers adapt */
+.dark-mode header,
+.dark-mode footer,
+.dark-mode nav {
+  background-color: #2b2b2b;
+  color: #ffe4ec;
+}
+
+/* Buttons in dark mode */
+.dark-mode .button,
+.dark-mode .buy-btn {
+  background-color: #ff7aa8;
+  color: white;
+  border: none;
+}
+
+/* Product cards darker */
+.dark-mode #product-card {
+  background-color: #2a2a2a;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+}
+/* --- Welcome Banner (Sliding Toast Style) --- */
+.welcome-banner {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #ffb6c1;
+  color: #2b2b2b;
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  font-size: 17px;
+  font-weight: 500;
+  animation: slideUp 0.8s ease-out;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 999;
+}
+
+#welcome-message {
+  flex: 1;
+}
+
+#close-banner {
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+#close-banner:hover {
+  color: #000;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+
+/* Dark mode support */
+.dark-mode .welcome-banner {
+  background-color: #ff7aa8;
+  color: #fff0f5;
+}
