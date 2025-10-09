@@ -76,6 +76,7 @@ body{
     font-size: 25px;
     text-decoration: double;
     text-align: center;
+    font-weight: bold;
 }
 #navbar li{
     display: inline-block;
@@ -334,9 +335,7 @@ form button:hover {
 .social-links a:hover {
   text-decoration: underline;
 }
-.btn{
-   
-}
+
 #header-main {
     text-align: center;
 }
@@ -349,7 +348,7 @@ form button:hover {
     background: red;
     color: white;
 }
-/* --- Theme Switch Styles --- */
+
 .theme-switch {
   position: fixed;
   top: 20px;
@@ -377,7 +376,7 @@ form button:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ffb6c1; /* pinkish default */
+  background-color: #ffb6c1; 
   border-radius: 34px;
   transition: background-color 0.4s;
 }
@@ -433,7 +432,7 @@ input:checked + .switch .slider::before {
   background-color: #2a2a2a;
   box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
 }
-/* --- Welcome Banner (Sliding Toast Style) --- */
+/* --- Welcome Banner --- */
 .welcome-banner {
   position: fixed;
   bottom: 30px;
@@ -493,4 +492,22 @@ input:checked + .switch .slider::before {
 .dark-mode .welcome-banner {
   background-color: #ff7aa8;
   color: #fff0f5;
+}
+/* Cart counter */
+#cart-icon{
+  position: relative;
+  font-weight: bold;
+  color: indianred;
+}
+#cart-count{
+  background-color: #ff4f81;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 14px;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+#cart-counter.bump {
+  transform: scale(1.3);
 }

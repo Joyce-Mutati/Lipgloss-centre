@@ -2,7 +2,7 @@
 const buyButtons = document.querySelectorAll('.buy-btn');
 buyButtons.forEach(button => {
   button.addEventListener('click', () => {
-    alert('💖 Thank you for choosing LipGloss Centre! Proceeding to checkout soon...');
+    alert('💖 Thank you for choosing LipGloss Centre! Proceeding to checkout.');
   });
 });
 
@@ -10,7 +10,7 @@ buyButtons.forEach(button => {
 const cartButtons = document.querySelectorAll('.button');
 cartButtons.forEach(button => {
   button.addEventListener('click', () => {
-    alert('🛍️ Item added to your cart!');
+    alert('🛍️ Item added to CART!');
   });
 });
 
@@ -22,6 +22,8 @@ if (localStorage.getItem('theme') === 'dark') {
   document.body.classList.add('dark-mode');
   toggleCheckbox.checked = true;
 }
+//console.log(toggleCheckbox);
+
 
 // Listen for toggle
 toggleCheckbox.addEventListener('change', () => {
@@ -38,6 +40,7 @@ toggleCheckbox.addEventListener('change', () => {
 const banner = document.getElementById('welcome-banner');
 const message = document.getElementById('welcome-message');
 const closeBanner = document.getElementById('close-banner');
+
 
 // Personalized greeting
 const hours = new Date().getHours();
@@ -62,5 +65,48 @@ closeBanner.addEventListener('click', () => {
 setTimeout(() => {
   banner.style.animation = 'slideDown 0.8s ease forwards';
 }, 5000);
+/* 
+//Alert after sending message
 
+const pop = document.getElementById('btn');
+pop.forEach(btn => {
+  btn.addEventListener('click', ()=>{
+    alert('Thankyou, We will get back to you')
+  });
+});
+const cartButtons = document.querySelectorAll('.button');
+cartButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    alert('🛍️ Item added to CART!');
+  });
+});
+*/ //
+//Cart count
+let cartCount = parseInt(localStorage.getItem('cart-Count')) || 0;
+const cartCountSpan = document.getElementById('cart-count');
+
+
+
+cartCountSpan.textContent = cartCount;
+
+cartButtons.forEach(button => {
+  button.addEventListener('click', () =>{
+    cartCount++;
+    cartCountSpan.textContent = cartCount;
+    localStorage.setItem('cartCount', cartCount);
+      cartCountSpan.classList.add('bump');
+      setTimeout(() => cartCountSpan.classList.remove('bump'),300);
+    
+  });
+});
+
+ const checkoutForm = document.getElementById('checkout-form');
+
+  if (checkoutForm) {
+    checkoutForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for your order! 💋 We’ll reach out shortly.');
+      checkoutForm.reset();
+    });
+  }
 
