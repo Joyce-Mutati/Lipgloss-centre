@@ -1,4 +1,16 @@
 // --- Buy Now ---
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.location.pathname.includes("checkout.html")) {
+    const checkoutForm = document.getElementById("checkout-form");
+    if (checkoutForm) {
+      checkoutForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Thank you for your order! 💋 We’ll reach out shortly.");
+        checkoutForm.reset();
+      });
+    }
+  }
+});
 const buyButtons = document.querySelectorAll('.buy-btn');
 buyButtons.forEach(button => {
   button.addEventListener('click', () => {
@@ -100,13 +112,37 @@ cartButtons.forEach(button => {
   });
 });
 
- const checkoutForm = document.getElementById('checkout-form');
-
-  if (checkoutForm) {
-    checkoutForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Thank you for your order! 💋 We’ll reach out shortly.');
-      checkoutForm.reset();
-    });
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.location.pathname.includes("checkout.html")) {
+    const checkoutForm = document.getElementById("checkout-form");
+    if (checkoutForm) {
+      checkoutForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Thank you for your order! 💋 We’ll reach out shortly.");
+        checkoutForm.reset();
+      });
+    }
   }
+});
+
+function searchProducts() {
+  const input = document.getElementById('search-bar');
+  const filter = input.value.toLowerCase().trim();
+  const products = document.querySelectorAll('#product-card');
+
+  products.forEach(products => {
+    const title = products.querySelector('h3');
+    const textValue = title ? title.textContent.toLowerCase() : '';
+
+    if (textValue.includes(filter)) {
+      products.style.display = '';
+    } else {
+      products.style.display = 'none';
+    }
+  });
+}
+
+
+
+
 
