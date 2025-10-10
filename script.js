@@ -11,12 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-const buyButtons = document.querySelectorAll('.buy-btn');
-buyButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    alert('💖 Thank you for choosing LipGloss Centre! Proceeding to checkout.');
-  });
-});
+// const buyButtons = document.querySelectorAll('.buy-btn');
+// buyButtons.forEach(button => {
+//   button.addEventListener('click', () => {
+//     alert('💖 Thank you for choosing LipGloss Centre! Proceeding to checkout.');
+//   });
+// });
 
 // --- Add to Cart ---
 const cartButtons = document.querySelectorAll('.button');
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (checkoutForm) {
       checkoutForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        alert("Thank you for your order! 💋 We’ll reach out shortly.");
+        alert("Thank you for your order! 💋 We’ll get back to you shortly.");
         checkoutForm.reset();
       });
     }
