@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         alert("Thank you for your order! 💋 We’ll reach out shortly.");
         checkoutForm.reset();
+        window.location.href = "home.html"
       });
     }
   }
@@ -48,13 +49,10 @@ toggleCheckbox.addEventListener('change', () => {
   }
 });
 
-// --- Welcome Message Banner (Sliding Version) ---
+// Banner
 const banner = document.getElementById('welcome-banner');
 const message = document.getElementById('welcome-message');
 const closeBanner = document.getElementById('close-banner');
-
-
-// Personalized greeting
 const hours = new Date().getHours();
 let greeting;
 
@@ -68,32 +66,15 @@ if (hours < 12) {
 
 message.textContent = greeting;
 
-// Allow manual close
 closeBanner.addEventListener('click', () => {
   banner.style.animation = 'slideDown 0.8s ease forwards';
 });
 
-// Auto-hide after 5 seconds
 setTimeout(() => {
   banner.style.animation = 'slideDown 0.8s ease forwards';
 }, 5000);
-/* 
-//Alert after sending message
 
-const pop = document.getElementById('btn');
-pop.forEach(btn => {
-  btn.addEventListener('click', ()=>{
-    alert('Thankyou, We will get back to you')
-  });
-});
-const cartButtons = document.querySelectorAll('.button');
-cartButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    alert('🛍️ Item added to CART!');
-  });
-});
-*/ //
-//Cart count
+//Cart 
 let cartCount = parseInt(localStorage.getItem('cart-Count')) || 0;
 const cartCountSpan = document.getElementById('cart-count');
 
@@ -111,7 +92,7 @@ cartButtons.forEach(button => {
     
   });
 });
-
+//Checkout
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname.includes("checkout.html")) {
     const checkoutForm = document.getElementById("checkout-form");
@@ -124,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-
+//Search
 function searchProducts() {
   const input = document.getElementById('search-bar');
   const filter = input.value.toLowerCase().trim();
@@ -141,6 +122,11 @@ function searchProducts() {
     }
   });
 }
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault(); 
+  alert("✅ Thanks for contacting us! We’ll get back to you soon.");
+  this.reset(); 
+});
 
 
 
