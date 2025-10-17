@@ -26,6 +26,11 @@
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="about.html">About us</a></li>
+                <li>
+                    <a href="cart.html" id="cart-icon">🛒 Cart
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
               </ul>
             </div>
             
@@ -47,18 +52,20 @@
 
         <label for="email">Email:</label><br>
         <input type="email" id="email" name="email" placeholder="gloss@gmail.com" required><br><br>
-          <label for="phoneNumber">Phone Number:</label><br>
-        <input type="number" id="mobile" name="mobile" placeholder="eg +25471234567" required><br><br>
-        <label for="location" >Choose your Shipping Address:
-          <select name="address" >
-            <option value="Nai">Nairobi</option>
-            <option value="Nyeri">Nyeri</option>
-            <option value="Nai">Mombasa</option>
-            <option value="Nyeri">Nyamakima</option>
-            <option value="Nai">Kitui</option>
-            <option value="Nyeri">Kisii</option>
-          </select>
-        </label><br><br>
+         <label for="mobile">Phone Number:</label><br>
+<input type="number" id="mobile" name="mobile" placeholder="e.g. +254712345678" required><br><br>
+
+<label for="address">Choose your Shipping Address:</label><br>
+<select name="address" id="address" required>
+  <option value="">-- Select your location --</option>
+  <option value="Nairobi">Nairobi</option>
+  <option value="Nyeri">Nyeri</option>
+  <option value="Mombasa">Mombasa</option>
+  <option value="Nyamakima">Nyamakima</option>
+  <option value="Kitui">Kitui</option>
+  <option value="Kisii">Kisii</option>
+</select><br><br>
+
       
         
         

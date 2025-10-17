@@ -12,28 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-//Firebase
-document.getElementById("contactForm").addEventListener("submit", async function(event) {
-  event.preventDefault();
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
-
-  try {
-    await db.collection("messages").add({
-      name: name,
-      email: email,
-      message: message,
-      timestamp: new Date()
-    });
-    alert("✅ Thanks for contacting us! We’ll get back to you soon.");
-    this.reset();
-  } catch (error) {
-    console.error("Error saving message: ", error);
-    alert("❌ Oops! Something went wrong. Try again later.");
-  }
-});
 // const buyButtons = document.querySelectorAll('.buy-btn');
 // buyButtons.forEach(button => {
 //   button.addEventListener('click', () => {
@@ -43,11 +22,34 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
 // --- Add to Cart ---
 const cartButtons = document.querySelectorAll('.button');
+
 cartButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    alert('🛍️ Item added to CART!');
+  button.addEventListener('click', (e) => {
+    const productCard = e.target.closest('#product-card');
+    const name = productCard.querySelector('h3').textContent;
+    const priceText = productCard.querySelector('p').textContent.replace(/[^\d]/g, '');
+    const price = parseInt(priceText);
+
+    // Retrieve or create cart
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Add the item
+    cart.push({ name, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Update cart count
+    const cartCountSpan = document.getElementById('cart-count');
+    cartCountSpan.textContent = cart.length;
+    localStorage.setItem('cartCount', cart.length);
+
+    // Cute animation
+    cartCountSpan.classList.add('bump');
+    setTimeout(() => cartCountSpan.classList.remove('bump'), 300);
+
+    alert(`🛍️ ${name} added to your cart!`);
   });
 });
+
 
 // --- Animated Light/Dark Mode Switcher ---
 const toggleCheckbox = document.getElementById('theme-toggle');
@@ -149,7 +151,28 @@ function searchProducts() {
 //   alert("✅ Thanks for contacting us! We’ll get back to you soon.");
 //   this.reset(); 
 // });
+//Firebase
+document.getElementById("contactForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
 
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  try {
+    await db.collection("messages").add({
+      name: name,
+      email: email,
+      message: message,
+      timestamp: new Date()
+    });
+    alert("✅ Thanks for contacting us! We’ll get back to you soon.");
+    this.reset();
+  } catch (error) {
+    console.error("Error saving message: ", error);
+    alert("❌ Oops! Something went wrong. Try again later.");
+  }
+});
 
 
 

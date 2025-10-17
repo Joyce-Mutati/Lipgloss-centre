@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Cart</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <div class="cart-container">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <p id="total"></p>
+
+    <div class="cart-buttons">
+      <button onclick="clearCart()">🧹 Clear Cart</button>
+      <a href="checkout.html"><button>Proceed to Checkout 💋</button></a>
+      <a href="shop.html"><button>← Back to Shop</button></a>
+    </div>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const list = document.getElementById('cart-items');
+    const totalEl = document.getElementById('total');
+
+    function renderCart() {
+      list.innerHTML = '';
+      let total = 0;
+
+      if (cart.length === 0) {
+        list.innerHTML = "<li>Your cart is empty 💔</li>";
+        totalEl.textContent = '';
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        const li = document.createElement('li');
+
+        const itemInfo = document.createElement('span');
+        itemInfo.textContent = `${item.name} - Ksh ${item.price}`;
+
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = '🗑️ Remove';
+        removeBtn.classList.add('remove-btn');
+        removeBtn.onclick = () => removeItem(index);
+
+        li.appendChild(itemInfo);
+        li.appendChild(removeBtn);
+        list.appendChild(li);
+        total += item.price;
+      });
+
+      totalEl.textContent = `Total: Ksh ${total}`;
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem('cartCount', cart.length);
+      renderCart();
+    }
+
+    function clearCart() {
+      localStorage.removeItem('cart');
+      localStorage.setItem('cartCount', 0);
+      alert("🧹 Cart cleared!");
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+
+
+     <footer id="main-footer">
+  <div class="footer-container">
+    
+
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p>📞 0794 314 321</p>
+      <p>📧 joycemutati023@gmail.com</p>
+      <p>📍 Thika, Kenya</p>
+    </div>
+
+    <div class="footer-hours">
+      <h3>Opening Hours</h3>
+      <p>Mon – Fri: 9:00 AM – 6:00 PM</p>
+      <p>Sat: 10:00 AM – 4:00 PM</p>
+      <p>Sun: Closed</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Joyce Mutati | All Rights Reserved</p>
+  </div>
+</footer>
+</body>
+</html>
