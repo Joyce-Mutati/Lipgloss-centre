@@ -12,6 +12,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+//Firebase
+document.getElementById("contactForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  try {
+    await db.collection("messages").add({
+      name: name,
+      email: email,
+      message: message,
+      timestamp: new Date()
+    });
+    alert("✅ Thanks for contacting us! We’ll get back to you soon.");
+    this.reset();
+  } catch (error) {
+    console.error("Error saving message: ", error);
+    alert("❌ Oops! Something went wrong. Try again later.");
+  }
+});
 // const buyButtons = document.querySelectorAll('.buy-btn');
 // buyButtons.forEach(button => {
 //   button.addEventListener('click', () => {
@@ -122,11 +144,14 @@ function searchProducts() {
     }
   });
 }
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-  event.preventDefault(); 
-  alert("✅ Thanks for contacting us! We’ll get back to you soon.");
-  this.reset(); 
-});
+// document.getElementById("contactForm").addEventListener("submit", function(event) {
+//   event.preventDefault(); 
+//   alert("✅ Thanks for contacting us! We’ll get back to you soon.");
+//   this.reset(); 
+// });
+
+
+
 
 
 

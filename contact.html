@@ -95,5 +95,27 @@
   </div>
 </footer>
         <script src="script.js"></script>
+
+        <!-- 👇 Start here: Firebase scripts -->
+<!-- ✅ Firebase (Compat version for plain HTML/JS) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<script>
+  // Your Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCY8KOnLUYpGd-rUHFrEI0fkPZNmEpVR8o",
+    authDomain: "lipgloss-centre.firebaseapp.com",
+    projectId: "lipgloss-centre",
+    storageBucket: "lipgloss-centre.firebasestorage.appspot",
+    messagingSenderId: "304265454027",
+    appId: "1:304265454027:web:4f19184010a8b19b03164e"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+
     </body>
 </html>
