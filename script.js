@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (checkoutForm) {
       checkoutForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        alert("Thank you for your order! 💋 We’ll reach out shortly.");
+        alert("Thank you for your order! 💋 We’ll reach out to you shortly.");
         checkoutForm.reset();
         localStorage.removeItem("cart");
         localStorage.setItem("cartCount", 0);

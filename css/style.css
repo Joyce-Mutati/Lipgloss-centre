@@ -706,4 +706,159 @@ input:checked + .switch .slider::before {
   transform: scale(1.05);
 }
 
+/* =========================
+   RESPONSIVE DESIGN SECTION
+   ========================= */
+
+/* For tablets and smaller laptops */
+@media (max-width: 992px) {
+  #navbar ul {
+    font-size: 20px;
+  }
+
+  #product-card {
+    width: 45%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .background-image {
+    height: 70vh;
+    background-attachment: scroll; /* Fixes mobile background scroll issue */
+  }
+
+  #navbar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #navbar li {
+    display: block;
+    margin: 8px 0;
+  }
+
+  .hero-text {
+    padding: 15px 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .product-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #product-card {
+    width: 80%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .about-container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .contact-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .welcome-banner {
+    bottom: 15px;
+    right: 15px;
+    font-size: 15px;
+    padding: 10px 18px;
+  }
+}
+
+/* For very small devices (phones under 480px) */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+
+  #product-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  #navbar ul {
+    font-size: 18px;
+  }
+
+  .footer-container div {
+    flex: 1 1 100%;
+  }
+}
+/* --- Responsive Navbar (CSS-Only Hamburger Menu) --- */
+
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: black;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+/* Hide the checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  #navbar ul {
+    display: none;
+    flex-direction: column;
+    background-color: #ffb6c1;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 2px solid #ff69b4;
+  }
+
+  #navbar li {
+    display: block;
+    margin: 12px 0;
+  }
+
+  /* Show hamburger icon */
+  .menu-icon {
+    display: block;
+    text-align: right;
+  }
+
+  /* When checkbox is checked, show menu */
+  #menu-toggle:checked + .menu-icon + ul {
+    display: flex;
+  }
+}
 
